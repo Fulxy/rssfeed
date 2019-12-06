@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>RSS-Feed</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Bootstrap CSS -->
+    <script src="https://kit.fontawesome.com/c76696a2e2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
+</head>
+  <body>
+    <div class="container p-3">
+      <div class="row">
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div id="rss-id-1" class="rss-wrapper gaming bg-blue">
+                <div class="rss-site-wrapper">
+                  <div class="rss-site-container">
+                    <div class="rss-site-logo">
+                      <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    </div>
+                    <h2>Gamestar<span>#gaming</span></h2>
+                    <p class="rss-site-desc">
+                      GameStar.de versorgt euch mit Tests, Previews, Videos, Reportagen und News zu PC-Spielen und Hardware.
+                    </p>
+                  </div>
+                  <span class="rss-site-open">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="rss-result-wrapper">
+                  <div id="content"></div>
+                </div>
+            </div>
+            <div id="rss-id-4" class="rss-wrapper technik bg-pink">
+                <div class="rss-site-wrapper">
+                  <div class="rss-site-container">
+                    <div class="rss-site-logo">
+                      <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    </div>
+                    <h2>PCGames<span>#technik</span></h2>
+                    <p class="rss-site-desc">
+                      asdadsad
+                    </p>
+                  </div>
+                  <span class="rss-site-open">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="rss-result-wrapper">
+                  <div id="content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div id="rss-id-2" class="rss-wrapper it bg-grey">
+                <div class="rss-site-wrapper">
+                  <div class="rss-site-container">
+                    <div class="rss-site-logo">
+                      <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    </div>
+                    <h2>Heise<span>#it</span></h2>
+                    <p class="rss-site-desc">
+                      asdadsad
+                    </p>
+                  </div>
+                  <span class="rss-site-open">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="rss-result-wrapper">
+                  <div id="content"></div>
+                </div>
+            </div>
+            <div id="rss-id-5" class="rss-wrapper gaming bg-orange">
+                <div class="rss-site-wrapper">
+                  <div class="rss-site-container">
+                    <div class="rss-site-logo">
+                      <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    </div>
+                    <h2>Polygon<span>#gaming</span></h2>
+                    <p class="rss-site-desc">
+                      asdadsad
+                    </p>
+                  </div>
+                  <span class="rss-site-open">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="rss-result-wrapper">
+                  <div id="content"></div>
+                </div>
+            </div>
+            <div id="rss-id-6" class="rss-wrapper sport bg-sun">
+                <div class="rss-site-wrapper">
+                  <div class="rss-site-container">
+                    <div class="rss-site-logo">
+                      <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    </div>
+                    <h2>Spox<span>#sport</span></h2>
+                    <p class="rss-site-desc">
+                      asdadsad
+                    </p>
+                  </div>
+                  <span class="rss-site-open">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="rss-result-wrapper">
+                  <div id="content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div id="rss-id-3" class="rss-wrapper sport bg-green">
+                <div class="rss-site-wrapper">
+                  <div class="rss-site-container">
+                    <div class="rss-site-logo">
+                      <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    </div>
+                    <h2>Formel1.de<span>#sport</span></h2>
+                    <p class="rss-site-desc">
+                      asdadsad
+                    </p>
+                  </div>
+                  <span class="rss-site-open">
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="rss-result-wrapper">
+                  <div id="content"></div>
+                </div>
+              </div> 
+        </div>
+      </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>  
+</body>
+</html>

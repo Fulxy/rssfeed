@@ -1,0 +1,12 @@
+//all mixins
+//box-shadow
+@mixin box-shadown($a, $b, $c, $d, $f) {
+    -moz-box-shadow:    $a $b $c $d $f;
+    -webkit-box-shadow: $a $b $c $d $f;
+    box-shadow:         $a $b $c $d $f;
+}
+@mixin gradient($to, $first, $second,) {
+   background: $second; 
+   background: -webkit-linear-gradient(to $to, $first, $second);
+   background: linear-gradient(to $to, $first, $second);
+}
