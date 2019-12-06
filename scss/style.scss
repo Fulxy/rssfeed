@@ -1,7 +1,7 @@
 //implode all scss
-@import "scss/_fonts.scss";
-@import "scss/mixins";
-@import"scss/vaiables";
+@import "_fonts.scss";
+@import "_mixins";
+@import"_vaiables";
 
 //gloabl settings
 body {
@@ -262,5 +262,6 @@ body {
             }
             }
         }
+
     }
 }
