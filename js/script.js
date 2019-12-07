@@ -70,7 +70,6 @@ $('.rss-site-open').click(function(){
   var show = 'rss-show';
   var target = $(this).parent().next().toggleClass(show);
   $(this).toggleClass('rss-open-icons');
-  console.log($(this).children());
   $('.rss-result-wrapper').not(target).removeClass(show);
 });
 /* 
