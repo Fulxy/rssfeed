@@ -77,12 +77,8 @@ body .bg-orange .rss-site-container {
   content: '\f7bf';
 }
 
-#content .brick {
-  width: 100%;
-}
-
 .rss-wrapper {
-  position: relative;
+  margin-bottom: 20px;
 }
 
 .rss-wrapper .rss-site-wrapper {
@@ -195,11 +191,8 @@ body .bg-orange .rss-site-container {
   background: linear-gradient(to right, #f2f2f2, #ECE9E6);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 5px 15px 25px;
-  padding: 5px 15px 25px;
-  border-radius: 20px;
-  /*  position: absolute;
-        top: 5px;
-        z-index: 2; */
+  margin-top: -25px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .rss-wrapper .rss-result-wrapper .rss-content {

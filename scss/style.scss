@@ -91,8 +91,17 @@ body {
     }
 }
 //rss body for each feed
+#content {
+    .brick {
+        width: 100%;
+    }
+}
 .rss-wrapper {
-    margin-bottom: 20px;
+    // display: flex;
+    // flex-direction: column;
+    // margin-bottom: 20px;
+    // width: 100%;
+    position: relative;
     .rss-site-wrapper {
         position: relative;
         padding: 0;
@@ -174,8 +183,12 @@ body {
         background: linear-gradient(to right, #f2f2f2, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
         padding: 5px 15px 25px;
-        margin-top: -25px;
-        border-radius: 0px 0px 20px 20px;
+
+        padding: 5px 15px 25px;
+        border-radius: 20px;
+       /*  position: absolute;
+        top: 5px;
+        z-index: 2; */
         .rss-content {
             padding-top: 45px;
             .rss-result-container {
@@ -278,5 +291,11 @@ body {
             }
         }
 
+    }
+    @media screen and (min-width:768px) {
+       // width: 49%;
+    }
+    @media screen and (min-width:992px) {
+       // width: 32%;
     }
 }

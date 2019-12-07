@@ -11,136 +11,60 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Masonary CSS -->
+    <link rel="stylesheet" href="/css/masonry.css">
+
     <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
 </head>
   <body>
-    <div class="container p-3">
-      <div class="row">
+   
+    <div class="container mt-5">
+     <!--  <div id="content" class="row justify-content-between">
+      </div> -->
+      <div class="masonry" id="content">
+        </div><!-- .masonry -->
+  </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-            <div id="rss-id-1" class="rss-wrapper gaming bg-blue">
-                <div class="rss-site-wrapper">
-                  <div class="rss-site-container">
-                    <div class="rss-site-logo">
-                      <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    </div>
-                    <h2>Gamestar<span>#gaming</span></h2>
-                    <p class="rss-site-desc">
-                      GameStar.de versorgt euch mit Tests, Previews, Videos, Reportagen und News zu PC-Spielen und Hardware.
-                    </p>
-                  </div>
-                  <span class="rss-site-open">
-                   
-                  </span>
-                </div>
-                <div class="rss-result-wrapper">
-                  <div class="rss-content"></div>
-                </div>
-            </div>
-            <div id="rss-id-4" class="rss-wrapper technik bg-pink">
-                <div class="rss-site-wrapper">
-                  <div class="rss-site-container">
-                    <div class="rss-site-logo">
-                      <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    </div>
-                    <h2>PCGames<span>#technik</span></h2>
-                    <p class="rss-site-desc">
-                      asdadsad
-                    </p>
-                  </div>
-                  <span class="rss-site-open">
-                  </span>
-                </div>
-                <div class="rss-result-wrapper">
-                  <div class="rss-content"></div>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-            <div id="rss-id-2" class="rss-wrapper it bg-grey">
-                <div class="rss-site-wrapper">
-                  <div class="rss-site-container">
-                    <div class="rss-site-logo">
-                      <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    </div>
-                    <h2>Heise<span>#it</span></h2>
-                    <p class="rss-site-desc">
-                      asdadsad
-                    </p>
-                  </div>
-                  <span class="rss-site-open">
-                   
-                  </span>
-                </div>
-                <div class="rss-result-wrapper">
-                  <div class="rss-content"></div>
-                </div>
-            </div>
-            <div id="rss-id-5" class="rss-wrapper gaming bg-orange">
-                <div class="rss-site-wrapper">
-                  <div class="rss-site-container">
-                    <div class="rss-site-logo">
-                      <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    </div>
-                    <h2>Polygon<span>#gaming</span></h2>
-                    <p class="rss-site-desc">
-                      asdadsad
-                    </p>
-                  </div>
-                  <span class="rss-site-open">
-                   
-                  </span>
-                </div>
-                <div class="rss-result-wrapper">
-                  <div class="rss-content"></div>
-                </div>
-            </div>
-            <div id="rss-id-6" class="rss-wrapper sport bg-sun">
-                <div class="rss-site-wrapper">
-                  <div class="rss-site-container">
-                    <div class="rss-site-logo">
-                      <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    </div>
-                    <h2>Spox<span>#sport</span></h2>
-                    <p class="rss-site-desc">
-                      asdadsad
-                    </p>
-                  </div>
-                  <span class="rss-site-open">
-                   
-                  </span>
-                </div>
-                <div class="rss-result-wrapper">
-                  <div class="rss-content"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div id="rss-id-3" class="rss-wrapper sport bg-green">
-                <div class="rss-site-wrapper">
-                  <div class="rss-site-container">
-                    <div class="rss-site-logo">
-                      <i class="fa fa-gamepad" aria-hidden="true"></i>
-                    </div>
-                    <h2>Formel1.de<span>#sport</span></h2>
-                    <p class="rss-site-desc">
-                      asdadsad
-                    </p>
-                  </div>
-                  <span class="rss-site-open">
-                   
-                  </span>
-                </div>
-                <div class="rss-result-wrapper">
-                  <div class="rss-content"></div>
-                </div>
-              </div> 
-        </div>
+
+    <form id="submit_form" style="display: none;">  
+      <label>Name</label>  
+      <input type="text" name="name" id="name" class="form-control" />  
+      <br />  
+      <label>Category</label> 
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1" name="category" id="category">
+          <option>gaming</option>
+          <option>it</option>
+          <option>sport</option>
+          <option>technik</option>
+        </select>
       </div>
-    </div>
-      
+      <br />
+      <label>Background</label>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1" name="bgColor" id="bgColor">
+          <option>blau</option>
+          <option>rot</option>
+          <option>grün</option>
+          <option>gelb</option>
+          <option>blau</option>
+        </select>
+      </div>
+      <br />
+      <label>Rsslink</label>  
+      <input name="rssLink" id="rssLink" class="form-control" />  
+      <br />
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="favorit">
+        <label class="custom-control-label" for="favorit">Toggle this switch element</label>
+        <input type="number" id="favoritCheck" name="favoritCheck" hidden />
+      </div>
+      <br />
+      <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />  
+    </form>  
+    <div id="response"></div>  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
