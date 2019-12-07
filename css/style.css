@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap");
+@import url("../dist/css/all.min.css");
 body {
   font-family: 'Titillium Web', sans-serif;
 }
@@ -170,6 +171,18 @@ body .bg-orange .rss-site-container {
   box-shadow: 0 0 8px -5px #000;
 }
 
+.rss-wrapper .rss-site-wrapper .rss-site-open::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f106";
+}
+
+.rss-wrapper .rss-site-wrapper .rss-site-open::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f107";
+}
+
 .rss-wrapper .rss-result-wrapper {
   background: #ECE9E6;
   /* fallback for old browsers */
@@ -182,11 +195,11 @@ body .bg-orange .rss-site-container {
   border-radius: 0px 0px 20px 20px;
 }
 
-.rss-wrapper .rss-result-wrapper #content {
+.rss-wrapper .rss-result-wrapper .rss-content {
   padding-top: 45px;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -198,7 +211,7 @@ body .bg-orange .rss-site-container {
   margin-bottom: 15px;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result .rss-result-img {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result .rss-result-img {
   width: 100%;
   z-index: 1;
   border-radius: 5px;
@@ -221,14 +234,14 @@ body .bg-orange .rss-site-container {
   box-shadow: 0 0 8px -5px #000;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result .rss-result-img h2 {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result .rss-result-img h2 {
   color: white;
   max-height: 106px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result .rss-result-img .rss-result-date {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result .rss-result-img .rss-result-date {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -243,15 +256,15 @@ body .bg-orange .rss-site-container {
   color: white;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result:last-child {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result:last-child {
   margin-bottom: 0px;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result:last-child::after {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result:last-child::after {
   display: none;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result h2 {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result h2 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
@@ -260,11 +273,11 @@ body .bg-orange .rss-site-container {
   color: #333;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result p {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result p {
   z-index: 2;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result p.rss-desc {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result p.rss-desc {
   margin-bottom: 15px;
   padding: 13px 5px 0;
   font-family: 'Lato', sans-serif;
@@ -272,15 +285,15 @@ body .bg-orange .rss-site-container {
   color: #333;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result p.rss-desc img {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result p.rss-desc img {
   display: none;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result p.rss-desc a {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result p.rss-desc a {
   display: none;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result a.btn-primary {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result a.btn-primary {
   background: #00B4DB;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
@@ -291,12 +304,16 @@ body .bg-orange .rss-site-container {
   border: none;
 }
 
-.rss-wrapper .rss-result-wrapper #content .rss-result-container .rss-result::after {
+.rss-wrapper .rss-result-wrapper .rss-content .rss-result-container .rss-result::after {
   content: '';
   width: 33%;
   height: 3px;
   margin: auto;
   margin-top: 15px;
   background-color: rgba(0, 0, 0, 0.15);
+}
+
+.rss-wrapper .rss-result-wrapper.rss-show .rss-content {
+  display: block !important;
 }
 /*# sourceMappingURL=style.css.map */

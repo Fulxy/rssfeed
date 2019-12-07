@@ -156,6 +156,16 @@ body {
             bottom: -10px;
             right: -10px;
             @include box-shadown(0, 0, 8px, -5px, #000);
+            &::after {
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900; 
+                content: "\f106";
+            }
+            &::before {
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900; 
+                content: "\f107";
+            }
         }
     }
     .rss-result-wrapper {
@@ -166,7 +176,7 @@ body {
         padding: 5px 15px 25px;
         margin-top: -25px;
         border-radius: 0px 0px 20px 20px;
-        #content {
+        .rss-content {
             padding-top: 45px;
             .rss-result-container {
             .rss-result {
@@ -260,6 +270,11 @@ body {
                 background-color: rgba(0,0,0,0.15);
                 }
             }
+            }
+        }
+        &.rss-show {
+            .rss-content {
+                display: block !important;
             }
         }
 
