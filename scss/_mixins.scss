@@ -10,3 +10,8 @@
    background: -webkit-linear-gradient(to $to, $first, $second);
    background: linear-gradient(to $to, $first, $second);
 }
+@mixin round($size) {
+    height: $size;
+    width: $size;
+    border-radius: $size;
+}

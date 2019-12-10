@@ -28,43 +28,47 @@
 
 
 
-    <form id="submit_form" style="display: none;">  
-      <label>Name</label>  
-      <input type="text" name="name" id="name" class="form-control" />  
-      <br />  
-      <label>Category</label> 
-      <div class="form-group">
-        <select class="form-control" id="exampleFormControlSelect1" name="category" id="category">
-          <option>gaming</option>
-          <option>it</option>
-          <option>sport</option>
-          <option>technik</option>
-        </select>
-      </div>
-      <br />
-      <label>Background</label>
-      <div class="form-group">
-        <select class="form-control" id="exampleFormControlSelect1" name="bgColor" id="bgColor">
-          <option>blau</option>
-          <option>rot</option>
-          <option>grün</option>
-          <option>gelb</option>
-          <option>blau</option>
-        </select>
-      </div>
-      <br />
-      <label>Rsslink</label>  
-      <input name="rssLink" id="rssLink" class="form-control" />  
-      <br />
-      <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="favorit">
-        <label class="custom-control-label" for="favorit">Toggle this switch element</label>
-        <input type="number" id="favoritCheck" name="favoritCheck" hidden />
-      </div>
-      <br />
-      <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />  
-    </form>  
-    <div id="response"></div>  
+  <div class="container">
+    <div class="row">
+        <form id="submit_form">  
+            <label>Name</label>  
+            <input type="text" name="name" id="name" class="form-control" />  
+            <br />  
+            <label>Category</label> 
+            <div class="form-group">
+              <select class="form-control" id="exampleFormControlSelect1" name="category" id="category">
+                <option>gaming</option>
+                <option>it</option>
+                <option>sport</option>
+                <option>technik</option>
+              </select>
+            </div>
+            <br />
+            <label>Background</label>
+            <div class="form-group">
+              <select class="form-control" id="exampleFormControlSelect1" name="bgColor" id="bgColor">
+                <option>blau</option>
+                <option>rot</option>
+                <option>grün</option>
+                <option>gelb</option>
+                <option>blau</option>
+              </select>
+            </div>
+            <br />
+            <label>Rsslink</label>  
+            <input name="rssLink" id="rssLink" class="form-control" />  
+            <br />
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="favorit">
+              <label class="custom-control-label" for="favorit">Toggle this switch element</label>
+              <input type="number" id="favoritCheck" name="favoritCheck" hidden />
+            </div>
+            <br />
+            <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />  
+          </form>  
+          <div id="response"></div>  
+    </div>
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
