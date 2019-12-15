@@ -106,8 +106,12 @@ $(rss6).click(function() {
 
 
 
-$(document).ready(function(){  
-  // creats all rssfeed from db
+$(document).ready(function(){ 
+  createThumpnail();
+});  
+
+
+createThumpnail = function() {
   $.ajax({
     url:"../test.php",
     type:"json",
@@ -121,71 +125,46 @@ $(document).ready(function(){
         var data = JSON.parse(data);
         console.log(data);
         $.each(data, function(key, rssItem){
-
-
-            console.log(rssItem.rsslink)
-            var $rssLink = rssItem.rssLink;
-            var rssId = "rss-" + rssItem.id;
-            $('#content').append('<div id="'+ rssId +'" class="rss-wrapper bg-blue"></div>');
-            var rssContainer = $('#'+ rssId +'.rss-wrapper')
-                .append('<div class="rss-site-wrapper"></div>')
-                .append('<div class="rss-result-wrapper"></div>').wrap('<div class="brick"></div>');
-            var siteWrapper = $('#'+ rssId +' .rss-site-wrapper');
-            var resultWrapper = $('#'+ rssId +' .rss-result-wrapper');
-
-            siteWrapper.append('<div class="rss-site-container"></div>');
-            $('#'+ rssId +' .rss-site-container').append('<div class="rss-site-logo"></div>')
-                .append('<h2>'+ rssItem.name +'<span>#'+ rssItem.category +'</span></h2>')
-                .append('<p class="rss-site-desc">Lorem ipsum dolor sit</p>');
-            siteWrapper.append('<span class="rss-site-open"></span>');
-            resultWrapper.append('<div class="rss-content" style="display:none;"></div>')
-            
-            var rssContent = $('#'+ rssId +' .rss-content')
-
-            // open rss-content
-            $('#'+ rssId +' .rss-site-open').click(function(){
-              var show = 'rss-show';
-              var target = $(this).parent().next().toggleClass(show);
-              $(this).toggleClass('rss-open-icons');
-              $('.rss-result-wrapper').not(target).removeClass(show);
+            console.log(rssItem.id)
+            rssLink = rssItem.rssLink;
+            feedId = rssItem.id;
+            feedName = rssItem.name;
+            $('.rssfeed-container').append('<div id="'+ feedId +'" class="rssfeed-item"></div>');
+            rssfeedItem = $('#'+ feedId +'.rssfeed-item');
+            rssfeedItem.append('<div class="rssfeed-content"></div>');
+            rssfeedItem.append('<span class="rssfeed-btn-secondary"></span>')
+            rssfeedContent = $('#'+ feedId +' .rssfeed-content');
+            rssfeedContent.append('<h3>'+ rssItem.name +'</h3>');
+            rssfeedContent.append('<p>'+ rssItem.description +'</p>');
+            /* console.log(rssItem.rsslink); */
+            //createContent(rssItem.rsslink, feedId);
+            rssfeedItem.on("click", function(){
+              createContent(rssItem.rsslink, feedId);
             });
-
-            $.ajax({
-              url: 'https://api.rss2json.com/v1/api.json',
-              method: 'GET',
-              dataType: 'json',
-              data: {
-                  rss_url: rssItem.rsslink, //$rssLink,
-                  api_key: 'cvanjxpkyenmcbi79icegjvrneyszwlnahyuhxu1', // apikey für rss2json
-                  count: 5, // wieviele news angezeigt werden
-              }
-            }).done(function (response) {
-                if(response.status != 'ok'){ throw response.message; }
-          
-                $content = rssContent;
-                $items = $('<div class="rss-result-container"></div>');
-
-                $.each(response.items, function (index,item) {     
-                  var $tpl = $('<div class="rss-result"><div class="rss-result-img"><span class="rss-result-date"></span><h2></h2></div><p class="rss-desc"></p><a class="btn btn-primary" target="_blank"></a></div>');
-                  
-                  if(item.enclosure.link != undefined) {
-                  $tpl.find('div.rss-result-img').css('background-image', 'url("' + item.enclosure.link + '")');
-                  } else {
-                    $tpl.find('div.rss-result-img').css('background-image', 'url("' + item.thumbnail + '")');
-                  }
-                  
-                  $tpl.find('div.rss-result-img span').append('<i class="fas fa-fire-alt"></i>');
-                  $tpl.find('h2').text(item.title);
-                  $tpl.find('a.btn').attr('href',item.link).text('mehr lesen');
-                  $tpl.find('p').html(item.description);
-                  $items.append($tpl);
-                });
-                $content.append($items);
-            });
-
         })
     }
   });
+};
+createContent = function(rssFeedUrl, rssFeedId){
+  $.ajax({
+    url: 'https://api.rss2json.com/v1/api.json',
+    method: 'GET',
+    dataType: 'json',
+    data: {
+        rss_url: rssFeedUrl, //$rssLink,
+        api_key: 'cvanjxpkyenmcbi79icegjvrneyszwlnahyuhxu1', // apikey für rss2json
+        count: 4, // wieviele news angezeigt werden
+    }
+  }).done(function (response) {
+    $('.rssfeed-container').append('<div id="'+ rssFeedId +'-news" class="rssfeed-news"></div>');
+    rssNews = $('#'+ rssFeedId +'-news.rssfeed-news');
+    $.each(response.items, function (index,item) {
+      rssNews.append('<div class="rssfeed-news-wrapper"><div class="rssfeed-news-head" style="background-image:url('+ item.enclosure.link +'),linear-gradient(#eb01a5, #d13531);"><h3>'+ item.title +'</h3></div><div class="rssfeed-news-content">'+ item.content +'</div><div class="rssfeed-tag-container"><div class="rssfeed-tag">'+ item.author +'</div><div class="rssfeed-btn-round"><i class="fas fa-angle-double-up"></i></div></div></div>');
+      $('.rssfeed-news-content').find('a').hide();
+      console.log(item)
+    });
+  });
+};
   
   // ajax for create-new-rssfeed
   $('#submit').click(function(){  
@@ -225,5 +204,4 @@ $(document).ready(function(){
             });  
        }  
   });
-});  
 

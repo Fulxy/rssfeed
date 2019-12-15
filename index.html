@@ -12,68 +12,45 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Masonary CSS -->
-    <link rel="stylesheet" href="/css/masonry.css">
-
     <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
 </head>
   <body>
-   
-    <div class="container mt-5">
-     <!--  <div id="content" class="row justify-content-between">
-      </div> -->
-      <div class="masonry" id="content">
-        </div><!-- .masonry -->
-  </div>
-
-
-
-  <div class="container">
-    <div class="row">
-        <form id="submit_form">  
-            <label>Name</label>  
-            <input type="text" name="name" id="name" class="form-control" />  
-            <br />  
-            <label>Category</label> 
-            <div class="form-group">
-              <select class="form-control" id="exampleFormControlSelect1" name="category" id="category">
-                <option>gaming</option>
-                <option>it</option>
-                <option>sport</option>
-                <option>technik</option>
-              </select>
-            </div>
-            <br />
-            <label>Background</label>
-            <div class="form-group">
-              <select class="form-control" id="exampleFormControlSelect1" name="bgColor" id="bgColor">
-                <option>blau</option>
-                <option>rot</option>
-                <option>grün</option>
-                <option>gelb</option>
-                <option>blau</option>
-              </select>
-            </div>
-            <br />
-            <label>Rsslink</label>  
-            <input name="rssLink" id="rssLink" class="form-control" />  
-            <br />
-            <div class="custom-control custom-switch">
-              <input type="checkbox" class="custom-control-input" id="favorit">
-              <label class="custom-control-label" for="favorit">Toggle this switch element</label>
-              <input type="number" id="favoritCheck" name="favoritCheck" hidden />
-            </div>
-            <br />
-            <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />  
-          </form>  
-          <div id="response"></div>  
+    <div class="bg-dark">
+      <nav class="container navbar navbar-light">
+          <a class="navbar-brand" href="#">
+            <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            fulxy
+          </a>
+          <div>
+            toggler
+          </div>
+        </nav>   
     </div>
-  </div>
+
+    <div class="container rssfeed-wrapper">
+      <h2>#Gaming</h2>
+      <div class="rssfeed-container">
+          <div class="rssfeed-item">
+          <div class="rssfeed-content">
+            <h3>Gamestar</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <span class="rssfeed-btn-secondary"><i class="fas fa-heartbeat"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rss-catbar">
+      <div class="container d-flex justify-content-center">
+        <div class="rss-cat-item"></div>
+        <div class="rss-cat-item"></div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>  
-</body>
+    <script src="/js/script.js"></script>
+  </body>
 </html>
