@@ -45,19 +45,36 @@ body .rss-catbar .rss-cat-item {
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  background-color: aqua;
+  background-color: #36393f;
   margin: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body .rssfeed-wrapper {
+body .rss-catbar .rss-cat-item i {
+  color: #43b581;
+}
+
+body #content {
+  margin-bottom: 100px;
+}
+
+body #content .rssfeed-wrapper {
   margin-top: 30px;
 }
 
-body .rssfeed-wrapper h2 {
+body #content .rssfeed-wrapper h2 {
   text-transform: uppercase;
 }
 
-body .rssfeed-wrapper .rssfeed-container {
+body #content .rssfeed-wrapper .rssfeed-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,7 +90,7 @@ body .rssfeed-wrapper .rssfeed-container {
           justify-content: space-between;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-item {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-item {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -94,11 +111,11 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-item {
   margin-bottom: 15px;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-content {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-content {
   position: relative;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-content h3 {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-content h3 {
   font-size: 44px;
   word-break: break-word;
   text-transform: uppercase;
@@ -106,11 +123,11 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-content h3 {
   font-weight: 700;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-content p {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-content p {
   margin: 0;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-btn-secondary {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-btn-secondary {
   height: 30px;
   width: 30px;
   border-radius: 30px;
@@ -130,11 +147,11 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-btn-secondary {
           align-items: center;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-btn-secondary i {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-item .rssfeed-btn-secondary i {
   font-size: 15px;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news {
   position: absolute;
   top: 0;
   left: 0;
@@ -143,14 +160,14 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-news {
   border-radius: 10px;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper {
   background-color: white;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-news-head {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-news-head {
   border-radius: 10px;
   height: 170px;
   background-size: cover;
@@ -165,19 +182,19 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rs
   overflow: hidden;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-news-head h3 {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-news-head h3 {
   margin-bottom: 15px;
   font-weight: 700;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-news-content {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-news-content {
   margin-top: 10px;
   font-size: 17px;
   font-weight: 400;
   padding: 0 5px;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-tag-container {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-tag-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,7 +204,7 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rs
   margin-top: 10px;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-tag-container .rssfeed-tag {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-tag-container .rssfeed-tag {
   height: 30px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -195,7 +212,7 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rs
   padding: 5px 20px;
 }
 
-body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-tag-container .rssfeed-btn-round {
+body #content .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rssfeed-tag-container .rssfeed-btn-round {
   height: 30px;
   width: 30px;
   border-radius: 30px;
@@ -209,5 +226,42 @@ body .rssfeed-wrapper .rssfeed-container .rssfeed-news .rssfeed-news-wrapper .rs
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body .rssfeed-add-wrapper {
+  position: fixed;
+  bottom: 85px;
+  width: 100%;
+}
+
+body .rssfeed-add-wrapper .rssfeed-add {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  background-color: #43b581;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  color: #36393f;
+}
+
+body .rssfeed-add-wrapper .rssfeed-add-form {
+  background-color: aqua;
+  width: calc(100% - 30px);
+  position: relative;
+  bottom: 70px;
+  left: 15px;
+  border-radius: 10px;
+  padding: 15px;
 }
 /*# sourceMappingURL=style.css.map */

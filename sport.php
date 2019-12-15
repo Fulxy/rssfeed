@@ -8,7 +8,7 @@
 	include ('mysql-connect.php');
 	
 	// Variabeln
-	$strSQL="SELECT * FROM `rssfeeds`";
+	$strSQL="SELECT * FROM `rssfeeds` WHERE `category` LIKE 'sport'";
 	
 	// Connect to Database
 	define('HOST',$MySQLHost);
