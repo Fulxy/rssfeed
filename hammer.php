@@ -22,15 +22,13 @@ if(isset($_POST["name"]))
     $rssLink = mysqli_real_escape_string($conn, $_POST["rssLink"]);
     $favorit = mysqli_real_escape_string($conn, $_POST["favoritCheck"]);
 
-
-    $query = "INSERT INTO `rssfeeds` (id, name, category, backgroundcolor, rsslink, favorit) 
-    VALUES (NULL, '$name', '$category', '$bgColor', '$rssLink', $favorit)";  
+    
+    $query = "INSERT INTO `rssfeeds` (`id`, `name`, `category`, `backgroundcolor`, `rsslink`, `favorit`, `description`) 
+    VALUES (NULL, '$name', '$category', '$bgColor', '$rssLink', '$favorit', '$name')";  
     
     if(mysqli_query($conn, $query))  
     {  
-        echo '<p>You have entered</p>';  
-        echo '<p>Name:'.$name.'</p>';  
-        echo '<p>Message : '.$message.'</p>';  
+        echo '<p>Erfolgreich</p>'; 
     }  
 }  
  
