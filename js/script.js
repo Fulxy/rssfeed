@@ -38,12 +38,10 @@ createThumpnail = function(cat) {
             rssfeedContent.append('<h3>'+ rssItem.name +'</h3>');
             rssfeedContent.append('<p>'+ rssItem.description +'</p>');
             rssfeedItem.on("click", function(){
-              console.log($(this).attr('id'));
-              test = $(this).attr('id');
-              console.log(rssItem.rsslink);
-              console.log(cat);
-              createContent(rssItem.rsslink, test, cat);
+              thisId = $(this).attr('id');
+              createContent(rssItem.rsslink, thisId, cat);
             });
+            getHeadline(rssItem.rsslink, feedId);
         })
     }
   });
@@ -85,7 +83,6 @@ createCat = function() {
         var clear = data;
         var data = JSON.parse(data);
         $.each(data, function(key, item){
-          console.log(item);
           $('.rss-cat-container').append('<a href="#'+ item.id +'" class="rss-cat-item">'+ item.icon +'</a>')
         })
     }
@@ -107,7 +104,6 @@ addFeedForm = function() {
   
   // ajax for create-new-rssfeed
   $('#submit').click(function(){ 
-    console.log("test");
         var name = $('#name').val();  
         var category = $('#category').val();
         var bgColor = $('#bgColor').val();
@@ -135,7 +131,6 @@ addFeedForm = function() {
                       $('#response').html('<span class="text-info">Loading response...</span>');  
                   },  
                   success:function(data){ 
-                    console.log("gesendet")
                       $('form').trigger("reset");  
                       $('#response').fadeIn().html(data);  
                       setTimeout(function(){  
@@ -144,6 +139,27 @@ addFeedForm = function() {
                   }  
             });  
         }  
+  });
+}
+
+getHeadline = function(rssFeedUrl, feedId) {
+  $.ajax({
+    url: 'https://api.rss2json.com/v1/api.json',
+    method: 'GET',
+    dataType: 'json',
+    data: {
+        rss_url: rssFeedUrl, //$rssLink,
+        api_key: 'cvanjxpkyenmcbi79icegjvrneyszwlnahyuhxu1', // apikey für rss2json
+        count: 1, // wieviele news angezeigt werden
+    }
+  }).done(function (response) {
+    rssFeed = $('#'+ feedId +'.rssfeed-item');
+    //console.log(response.feed.title)
+    rssFeed.children().first().children().next().html(response.feed.title);
+    $.each(response.items, function (index,item) {
+      console.log(item.enclosure.link);
+      rssFeed.css('background-image', 'url('+ item.enclosure.link +'), linear-gradient(#ff5850, #d13531)');
+    });
   });
 }
 
